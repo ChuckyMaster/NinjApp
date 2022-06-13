@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.username, {
+                label: 'Nom d\'utilisateur'
+            }) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.Kyu) }}
+            {{ form_row(registrationForm.dan) }}
+            {{ form_row(registrationForm.Dojo) }}
+            {{ form_row(registrationForm.isMaster, {
+                label: "Etes vous maître d'école?"
+            }) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe'
+            }) }}
+
+            <button type="submit" class="btn btn-dark">Inscription</button>
+            {{ form_end(registrationForm) }}
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
